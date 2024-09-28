@@ -32,5 +32,8 @@
       "@types/react": "$@types/react",
       "@types/react-dom": "$@types/react-dom"
     }
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
