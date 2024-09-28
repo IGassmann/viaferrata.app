@@ -1,6 +1,10 @@
 {
   "name": "via-ferrata",
-  "private": true,
+  "license": "UNLICENSED",
+  "homepage": "https://via-ferrata.app/",
+  "repository": "https://github.com/IGassmann/via-ferrata",
+  "bugs": "https://github.com/IGassmann/via-ferrata/issues",
+  "author": "Igor Gassmann <igor@igassmann.me> (https://igassmann.me)",
   "type": "module",
   "scripts": {
     "dev": "next dev --turbo",
@@ -37,5 +41,6 @@
   "engines": {
     "node": "20.x"
   },
-  "packageManager": "pnpm@9.11.0"
+  "packageManager": "pnpm@9.11.0",
+  "private": true
 }
