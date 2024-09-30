@@ -1,9 +1,9 @@
 {
-  "name": "via-ferrata",
+  "name": "viaferrata.app",
   "license": "UNLICENSED",
-  "homepage": "https://via-ferrata.app/",
-  "repository": "https://github.com/IGassmann/via-ferrata",
-  "bugs": "https://github.com/IGassmann/via-ferrata/issues",
+  "homepage": "https://viaferrata.app/",
+  "repository": "https://github.com/IGassmann/viaferrata.app",
+  "bugs": "https://github.com/IGassmann/viaferrata.app/issues",
   "author": "Igor Gassmann <igor@igassmann.me> (https://igassmann.me)",
   "type": "module",
   "scripts": {
