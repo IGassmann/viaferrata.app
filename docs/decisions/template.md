@@ -10,6 +10,7 @@ status: "{deprecated | superseded by ADR-0123"
 {Describe the context and problem statement, e.g., in free form using two to three sentences or in the form of an illustrative story. You may want to articulate the problem in form of a question and add links to collaboration boards or issue management systems.}
 
 <!-- This is an optional element. Feel free to remove. -->
+
 ## Decision Drivers
 
 - {decision driver 1, e.g., a force, facing concern, …}
@@ -28,6 +29,7 @@ status: "{deprecated | superseded by ADR-0123"
 Chosen option: "{title of option 1}", because {justification. e.g., only option, which meets k.o. criterion decision driver | which resolves force {force} | … | comes out best (see below)}.
 
 <!-- This is an optional element. Feel free to remove. -->
+
 ### Consequences
 
 - Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
@@ -35,11 +37,13 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 - … <!-- numbers of consequences can vary -->
 
 <!-- This is an optional element. Feel free to remove. -->
+
 ## Pros and Cons of the Options
 
 ### {title of option 1}
 
 <!-- This is an optional element. Feel free to remove. -->
+
 {example | description | pointer to more information | …}
 
 - Good, because {argument a}
@@ -60,6 +64,7 @@ Chosen option: "{title of option 1}", because {justification. e.g., only option,
 - …
 
 <!-- This is an optional element. Feel free to remove. -->
+
 ## More Information
 
 {You might want to provide additional evidence/confidence for the decision outcome here and/or document the team agreement on the decision and/or define when/how this decision the decision should be realized and if/when it should be re-visited. Links to other decisions and resources might appear here as well.}

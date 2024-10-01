@@ -15,7 +15,7 @@ these records follow?
 
 Chosen option: "MADR 4.0.0", because
 
-- Implicit assumptions should be made explicit. Design documentation is important to enable people 
+- Implicit assumptions should be made explicit. Design documentation is important to enable people
   to understand the decisions later on. See also ["A rational design process: How and why to fake it"](https://doi.org/10.1109/TSE.1986.6312940).
 - MADR allows for structured capturing of any decision.
 - The MADR structure is comprehensible and facilitates usage and maintenance.

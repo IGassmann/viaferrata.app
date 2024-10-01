@@ -1,17 +1,17 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-import './globals.css';
+import "./globals.css";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: 'Via Ferrata',
-  description: 'Find a via ferrata near you',
+  title: "Via Ferrata",
+  description: "Find a via ferrata near you",
 };
 
 export default function RootLayout({
