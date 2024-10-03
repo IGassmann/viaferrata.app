@@ -18,12 +18,6 @@ We want to use icons in our application. Which icon library should we use?
 
 Chosen option: "Lucide" because it offers a large number of icons while also being free.
 
-### Consequences
-
-- Good, because {positive consequence, e.g., improvement of one or more desired qualities, …}
-- Bad, because {negative consequence, e.g., compromising one or more desired qualities, …}
-- … <!-- numbers of consequences can vary -->
-
 ## Pros and Cons of the Options
 
 ### Lucide
