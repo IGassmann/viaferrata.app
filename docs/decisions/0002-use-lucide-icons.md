@@ -2,7 +2,7 @@
 
 ## Context and Problem Statement
 
-We want to use icons in our application. Which icon library should we use?
+I want to use icons in our application. Which icon library should I use?
 
 ## Considered Options
 

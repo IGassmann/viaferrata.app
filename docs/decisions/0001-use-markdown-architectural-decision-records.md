@@ -2,7 +2,7 @@
 
 ## Context and Problem Statement
 
-We want to record architectural decisions made in this project. Which format and structure should
+I want to record architectural decisions made in this project. Which format and structure should
 these records follow?
 
 ## Considered Options
