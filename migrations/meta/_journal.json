@@ -15,6 +15,20 @@
       "when": 1728298347164,
       "tag": "0001_bizarre_dragon_man",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1728487215033,
+      "tag": "0002_lucky_living_lightning",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1728487452311,
+      "tag": "0003_reflective_legion",
+      "breakpoints": true
     }
   ]
 }
