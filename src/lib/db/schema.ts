@@ -2,6 +2,7 @@ import * as PublicID from "@/lib/PublicID";
 import { sql } from "drizzle-orm";
 import {
   bigserial,
+  geometry,
   interval,
   pgEnum,
   pgTable,
@@ -28,6 +29,11 @@ export const routes = pgTable("routes", {
   name: varchar("name", { length: 256 }).notNull(),
   difficultyGrade: difficultyGradeEnum().notNull(),
   duration: interval("duration").notNull(),
+  coordinates: geometry("position", {
+    type: "point",
+    mode: "xy",
+    srid: 4326,
+  }).notNull(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at")
     .default(sql`NULL`)
