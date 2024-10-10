@@ -1,7 +1,8 @@
 import Badge, { type BadgeColor } from "@/components/Badge";
+import FormattedDuration from "@/components/FormattedDuration";
 import db from "@/lib/db";
 import { routes, type DifficultyGrade } from "@/lib/db/schema";
-import { parseDuration, type DateTimeDuration } from "@internationalized/date";
+import { parseDuration } from "@internationalized/date";
 import { CarIcon, TrainIcon } from "lucide-react";
 
 async function listRoutes() {
@@ -34,32 +35,6 @@ const difficultyGradeColors: Record<DifficultyGrade, BadgeColor> = {
   K6: "zinc",
 };
 
-function formatDuration(duration: DateTimeDuration): string {
-  const parts = [];
-  if (duration.years) {
-    parts.push(`${duration.years}y`);
-  }
-  if (duration.months) {
-    parts.push(`${duration.months}m`);
-  }
-  if (duration.weeks) {
-    parts.push(`${duration.weeks}w`);
-  }
-  if (duration.days) {
-    parts.push(`${duration.days}d`);
-  }
-  if (duration.hours) {
-    parts.push(`${duration.hours}h`);
-  }
-  if (duration.minutes) {
-    parts.push(`${duration.minutes}m`);
-  }
-  if (duration.seconds) {
-    parts.push(`${duration.seconds}s`);
-  }
-  return parts.join(" ");
-}
-
 export default async function HomePage() {
   const routes = await listRoutes();
   return (
@@ -82,9 +57,11 @@ export default async function HomePage() {
                 <Badge color={difficultyGradeColors[route.difficultyGrade]}>
                   {route.difficultyGrade}
                 </Badge>
-                <span className="text-xs/6 text-zinc-600">
-                  {formatDuration(route.duration)}
-                </span>
+                <FormattedDuration
+                  value={route.duration}
+                  style="narrow"
+                  className="text-xs/6 text-zinc-600"
+                />
               </div>
               <div className="flex items-center gap-2.5 text-xs/6 text-zinc-500">
                 <div className="flex items-center gap-2">
