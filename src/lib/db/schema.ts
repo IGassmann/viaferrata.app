@@ -19,6 +19,8 @@ export const difficultyGradeEnum = pgEnum("difficulty_grade", [
   "K6",
 ]);
 
+export type DifficultyGrade = (typeof difficultyGradeEnum.enumValues)[number];
+
 export const routes = pgTable("routes", {
   internalID: bigserial("internal_id", { mode: "number" }).primaryKey(),
   publicID: varchar("public_id", { length: PublicID.MAX_LENGTH })

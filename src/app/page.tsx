@@ -1,7 +1,7 @@
-import Badge from "@/components/Badge";
+import Badge, { type BadgeColor } from "@/components/Badge";
 import db from "@/lib/db";
-import { routes } from "@/lib/db/schema";
-import { type DateTimeDuration, parseDuration } from "@internationalized/date";
+import { routes, type DifficultyGrade } from "@/lib/db/schema";
+import { parseDuration, type DateTimeDuration } from "@internationalized/date";
 import { CarIcon, TrainIcon } from "lucide-react";
 
 async function listRoutes() {
@@ -24,6 +24,15 @@ async function listRoutes() {
     },
   }));
 }
+
+const difficultyGradeColors: Record<DifficultyGrade, BadgeColor> = {
+  K1: "lime",
+  K2: "cyan",
+  K3: "indigo",
+  K4: "amber",
+  K5: "red",
+  K6: "zinc",
+};
 
 function formatDuration(duration: DateTimeDuration): string {
   const parts = [];
@@ -70,7 +79,9 @@ export default async function HomePage() {
 
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Badge color={"green"}>{route.difficultyGrade}</Badge>
+                <Badge color={difficultyGradeColors[route.difficultyGrade]}>
+                  {route.difficultyGrade}
+                </Badge>
                 <span className="text-xs/6 text-zinc-600">
                   {formatDuration(route.duration)}
                 </span>
