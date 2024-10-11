@@ -1,6 +1,6 @@
 {
-  "id": "78588fa8-a8c8-4a95-ba83-aefd50d51db2",
-  "prevId": "eb335c87-9ccc-4708-a80d-9ab83b58881e",
+  "id": "b0088409-05c6-4a41-aa51-b911cb389d29",
+  "prevId": "760ad413-1901-4db8-ab03-ecfeae579e11",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -33,7 +33,7 @@
         },
         "name": {
           "name": "name",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
@@ -50,8 +50,8 @@
           "primaryKey": false,
           "notNull": true
         },
-        "position": {
-          "name": "position",
+        "coordinates": {
+          "name": "coordinates",
           "type": "geometry(point)",
           "primaryKey": false,
           "notNull": true

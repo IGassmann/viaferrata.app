@@ -1,6 +1,6 @@
 {
-  "id": "d805021a-29f3-458d-85c2-6e60a866985e",
-  "prevId": "d44564ff-4eb1-4ded-8e11-162a20262e6e",
+  "id": "eb335c87-9ccc-4708-a80d-9ab83b58881e",
+  "prevId": "b2f06ab4-dd51-4779-806e-fe0bc8fa3baf",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -10,9 +10,20 @@
       "columns": {
         "internal_id": {
           "name": "internal_id",
-          "type": "bigserial",
+          "type": "bigint",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "identity": {
+            "type": "always",
+            "name": "routes_internal_id_seq",
+            "schema": "public",
+            "increment": "1",
+            "startWith": "1",
+            "minValue": "1",
+            "maxValue": "9223372036854775807",
+            "cache": "1",
+            "cycle": false
+          }
         },
         "public_id": {
           "name": "public_id",
@@ -26,9 +37,22 @@
           "primaryKey": false,
           "notNull": true
         },
+        "difficultyGrade": {
+          "name": "difficultyGrade",
+          "type": "difficulty_grade",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
         "duration": {
           "name": "duration",
           "type": "interval",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "position": {
+          "name": "position",
+          "type": "geometry(point)",
           "primaryKey": false,
           "notNull": true
         },
@@ -61,7 +85,20 @@
       }
     }
   },
-  "enums": {},
+  "enums": {
+    "public.difficulty_grade": {
+      "name": "difficulty_grade",
+      "schema": "public",
+      "values": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K5",
+        "K6"
+      ]
+    }
+  },
   "schemas": {},
   "sequences": {},
   "_meta": {

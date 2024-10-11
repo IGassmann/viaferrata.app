@@ -1,6 +1,6 @@
 {
-  "id": "4ddc05ca-00c1-40c0-b6c9-a3f90ccfd2fa",
-  "prevId": "71957ff7-8fb6-42a7-b8f0-5882115605e9",
+  "id": "760ad413-1901-4db8-ab03-ecfeae579e11",
+  "prevId": "78588fa8-a8c8-4a95-ba83-aefd50d51db2",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -10,9 +10,20 @@
       "columns": {
         "internal_id": {
           "name": "internal_id",
-          "type": "bigserial",
+          "type": "bigint",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "identity": {
+            "type": "always",
+            "name": "routes_internal_id_seq",
+            "schema": "public",
+            "increment": "1",
+            "startWith": "1",
+            "minValue": "1",
+            "maxValue": "9223372036854775807",
+            "cache": "1",
+            "cycle": false
+          }
         },
         "public_id": {
           "name": "public_id",
@@ -22,7 +33,7 @@
         },
         "name": {
           "name": "name",
-          "type": "varchar(256)",
+          "type": "text",
           "primaryKey": false,
           "notNull": true
         },
@@ -47,14 +58,14 @@
         },
         "created_at": {
           "name": "created_at",
-          "type": "timestamp",
+          "type": "timestamp with time zone",
           "primaryKey": false,
           "notNull": true,
           "default": "now()"
         },
         "updated_at": {
           "name": "updated_at",
-          "type": "timestamp",
+          "type": "timestamp with time zone",
           "primaryKey": false,
           "notNull": false,
           "default": "NULL"

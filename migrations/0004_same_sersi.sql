@@ -1,0 +1,1 @@
+ALTER TABLE "routes" RENAME COLUMN "position" TO "coordinates";

@@ -1,11 +1,12 @@
 import * as PublicID from "@/lib/PublicID";
 import { sql } from "drizzle-orm";
 import {
-  bigserial,
+  bigint,
   geometry,
   interval,
   pgEnum,
   pgTable,
+  text,
   timestamp,
   varchar,
 } from "drizzle-orm/pg-core";
@@ -22,22 +23,26 @@ export const difficultyGradeEnum = pgEnum("difficulty_grade", [
 export type DifficultyGrade = (typeof difficultyGradeEnum.enumValues)[number];
 
 export const routes = pgTable("routes", {
-  internalID: bigserial("internal_id", { mode: "number" }).primaryKey(),
+  internalID: bigint("internal_id", { mode: "number" })
+    .generatedAlwaysAsIdentity()
+    .primaryKey(),
   publicID: varchar("public_id", { length: PublicID.MAX_LENGTH })
     .$type<PublicID.PublicID<typeof PublicID.PREFIXES.route>>()
     .unique()
     .notNull()
     .$defaultFn(() => PublicID.create(PublicID.PREFIXES.route)),
-  name: varchar("name", { length: 256 }).notNull(),
+  name: text().notNull(),
   difficultyGrade: difficultyGradeEnum().notNull(),
-  duration: interval("duration").notNull(),
-  coordinates: geometry("position", {
+  duration: interval().notNull(),
+  coordinates: geometry({
     type: "point",
     mode: "xy",
     srid: 4326,
   }).notNull(),
-  createdAt: timestamp("created_at").notNull().defaultNow(),
-  updatedAt: timestamp("updated_at")
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
     .default(sql`NULL`)
     .$onUpdate(() => new Date()),
 });

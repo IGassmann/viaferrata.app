@@ -1,1 +1,3 @@
 ALTER DATABASE neondb SET IntervalStyle = 'iso_8601';
+
+CREATE EXTENSION IF NOT EXISTS postgis;
