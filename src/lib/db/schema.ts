@@ -32,7 +32,7 @@ export const routes = pgTable("routes", {
     .notNull()
     .$defaultFn(() => PublicID.create(PublicID.PREFIXES.route)),
   name: text().notNull(),
-  imageURL: text("image_url"),
+  imageURL: text("image_url").notNull(),
   difficultyGrade: difficultyGradeEnum().notNull(),
   duration: interval().notNull(),
   coordinates: geometry({
