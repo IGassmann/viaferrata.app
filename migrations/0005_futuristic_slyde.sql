@@ -1,0 +1,1 @@
+ALTER TABLE "routes" ADD COLUMN "image_url" text;
