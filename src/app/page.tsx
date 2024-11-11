@@ -4,7 +4,6 @@ import db from "@/lib/db";
 import { routes, type DifficultyGrade } from "@/lib/db/schema";
 import { parseDuration } from "@internationalized/date";
 import { CarIcon, TrainIcon } from "lucide-react";
-import { headers } from "next/headers";
 import Image from "next/image";
 
 async function listRoutes() {
@@ -40,17 +39,8 @@ const difficultyGradeColors: Record<DifficultyGrade, BadgeColor> = {
 
 export default async function HomePage() {
   const routes = await listRoutes();
-
-  const headersList = Array.from((await headers()).entries());
   return (
     <menu className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-6">
-      <div>
-        {headersList.map(([name, value]) => (
-          <div key={name}>
-            <strong>{name}</strong>: {value}
-          </div>
-        ))}
-      </div>
       {routes.map(async (route) => (
         <li
           className="relative h-full w-full overflow-hidden rounded-lg bg-white shadow-[0px_0px_0px_1px_rgba(9,9,11,0.07),0px_2px_2px_0px_rgba(9,9,11,0.05)] dark:bg-zinc-900 dark:shadow-[0px_0px_0px_1px_rgba(255,255,255,0.1)] dark:before:pointer-events-none dark:before:absolute dark:before:-inset-px dark:before:rounded-xl dark:before:shadow-[0px_2px_8px_0px_rgba(0,_0,_0,_0.20),_0px_1px_0px_0px_rgba(255,_255,_255,_0.06)_inset] forced-colors:outline"
