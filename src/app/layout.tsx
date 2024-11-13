@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} bg-white text-zinc-950 antialiased dark:bg-zinc-900 dark:text-white`}
+      className={`${inter.variable} bg-zinc-50 text-zinc-950 antialiased dark:bg-zinc-900 dark:text-white`}
     >
       <body className="mx-auto grid min-h-dvh max-w-7xl place-content-center px-4">
         {children}
